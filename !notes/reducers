@@ -1,0 +1,4 @@
+forbidden:
+- mutate arguments
+- perform side effects
+- call non-pure functions

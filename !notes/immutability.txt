@@ -1,0 +1,5 @@
+- Object.assign
+
+return (Object.assign({}, state, { counter: state.counter + 1 }));
+
+- spread operator for arrays

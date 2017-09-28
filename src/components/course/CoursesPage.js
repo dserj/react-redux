@@ -4,7 +4,7 @@ class CoursesPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Courses</h1>
+        <h1>Courses1</h1>
       </div>
     );
   }
