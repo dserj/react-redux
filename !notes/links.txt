@@ -1,0 +1,2 @@
+https://github.com/coryhouse/react-slingshot ==>> recommended for production
+https://github.com/coryhouse/pluralsight-redux-starter
