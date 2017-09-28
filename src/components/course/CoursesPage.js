@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import * as courseActions from '../../actions/courseActions';
 
 class CoursesPage extends React.Component {
   constructor(props, context) {
@@ -19,7 +21,8 @@ class CoursesPage extends React.Component {
   }
 
   onClickSave() {
-    alert(`Saving ${this.state.course.title}`);
+    // we can do this because of ommiting 2nd argument of "connect"
+    this.props.dispatch(courseActions.createCourse(this.state.course));
   }
 
   render() {
@@ -41,4 +44,14 @@ class CoursesPage extends React.Component {
   }
 }
 
-export default CoursesPage;
+function mapStateToProps(state, ownProps){
+  return {
+    // state.courses ==>> defined in root reducer /reducers/index.js
+    courses: state.courses
+  };
+}
+
+// connect is just returning a function
+// export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
+// if we omit 2nd param we automatically getting this.props.dispatch in our class
+export default connect(mapStateToProps)(CoursesPage);
