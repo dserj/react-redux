@@ -1,2 +1,3 @@
 https://github.com/coryhouse/react-slingshot ==>> recommended for production
 https://github.com/coryhouse/pluralsight-redux-starter
+https://github.com/gaearon/react-hot-loader ==>> will come soon! and will became a standard
