@@ -3,3 +3,16 @@
 ===== IDEs
 ==== Atom
 extensions: react, terminal-plus
+
+===== React in ES6
+
+- no "auto bind": recommended to bind "this" in constructor ==>>
+class Exmpl {
+  constructor() {
+    this.handleClick = this.handleClick.bind(this);
+  }
+}
+
+- PropTypes declared separately
+- Default props declared separately
+- set initial state in constructor

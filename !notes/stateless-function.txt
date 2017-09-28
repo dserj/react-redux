@@ -1,0 +1,9 @@
+- no class needed
+- avoid "this" keyword
+- doesn't need to use "bind"
+- enforced best practices
+- high signal-to-noise ratio
+- enhaced code completion / intellisense
+- easy to test
+- performance
+
