@@ -4,7 +4,3 @@ https://github.com/gaearon/react-hot-loader ==>> will come soon! and will became
 
 bit.ly/npmvsgulp ==>> why switched from gulp to npm
 
-IDEs
-
-==== Atom
-extensions: react, terminal-plus

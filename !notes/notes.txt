@@ -1,1 +1,5 @@
 - eslint-watch doesn't currentlu support paths with spaces, so avoid name with spaces like "My Documents" (see: package.json/scripts/lint)
+
+===== IDEs
+==== Atom
+extensions: react, terminal-plus
