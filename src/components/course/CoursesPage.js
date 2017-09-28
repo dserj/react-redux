@@ -22,7 +22,8 @@ class CoursesPage extends React.Component {
 
   onClickSave() {
     // we can do this because of ommiting 2nd argument of "connect"
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    //this.props.dispatch(courseActions.createCourse(this.state.course));
+    this.props.createCourse(this.state.course);
   }
 
   courseRow(course, index) {
@@ -50,7 +51,7 @@ class CoursesPage extends React.Component {
 }
 
 CoursesPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  createCourse: PropTypes.func.isRequired,
   courses: PropTypes.array.isRequired
 };
 
@@ -61,7 +62,13 @@ function mapStateToProps(state, ownProps){
   };
 }
 
+function mapDispatchToProps(dispatch){
+  return {
+    createCourse: course => dispatch(courseActions.createCourse(course))
+  };
+}
+
 // connect is just returning a function
-// export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
 // if we omit 2nd param we automatically getting this.props.dispatch in our class
-export default connect(mapStateToProps)(CoursesPage);
+// export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
