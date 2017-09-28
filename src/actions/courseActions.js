@@ -3,7 +3,7 @@ import courseApi from '../api/mockCourseApi';
 
 function loadCoursesSuccess(courses){
   return {
-    type: types.LOAD_COURSES_SUCCESS, course: courses
+    type: types.LOAD_COURSES_SUCCESS, courses
   };
 }
 

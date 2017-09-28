@@ -6,25 +6,6 @@ import * as courseActions from '../../actions/courseActions';
 class CoursesPage extends React.Component {
   constructor(props, context) {
     super(props, context);
-
-    this.state = {
-      course: { title: "" }
-    };
-
-    this.onTiteChange = this.onTiteChange.bind(this);
-    this.onClickSave = this.onClickSave.bind(this);
-  }
-
-  onTiteChange(e){
-    const course = this.state.course;
-    course.title = e.target.value;
-    this.setState({ course: course });
-  }
-
-  onClickSave() {
-    // we can do this because of ommiting 2nd argument of "connect"
-    //this.props.dispatch(courseActions.createCourse(this.state.course));
-    this.props.actions.createCourse(this.state.course);
   }
 
   courseRow(course, index) {
@@ -36,17 +17,7 @@ class CoursesPage extends React.Component {
       <div>
         <h1>Courses</h1>
         {this.props.courses.map(this.courseRow)}
-        <h2>Add course</h2>
-        <input
-          type="text"
-          onChange={this.onTiteChange}
-          value={this.state.course.title} />
-
-        <input
-          type="submit"
-          value="Save"
-          onClick={this.onClickSave} />
-      </div>
+        </div>
     );
   }
 }
