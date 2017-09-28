@@ -5,9 +5,23 @@ class CoursesPage extends React.Component {
     super(props, context);
 
     this.state = {
-      course: { title: null }
+      course: { title: "" }
     };
+
+    this.onTiteChange = this.onTiteChange.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
   }
+
+  onTiteChange(e){
+    const course = this.state.course;
+    course.title = e.target.value;
+    this.setState({ course: course });
+  }
+
+  onClickSave() {
+    alert(`Saving ${this.state.course.title}`);
+  }
+
   render() {
     return (
       <div>

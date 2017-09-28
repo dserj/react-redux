@@ -6,7 +6,7 @@ extensions: react, terminal-plus
 
 ===== React in ES6
 
-- no "auto bind": recommended to bind "this" in constructor ==>>
+- no "auto bind": recommended to bind "this" in constructor ==>> performance
 class Exmpl {
   constructor() {
     this.handleClick = this.handleClick.bind(this);
