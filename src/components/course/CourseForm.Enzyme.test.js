@@ -1,5 +1,8 @@
 import expect from 'expect';
 import React from 'react';
+
+// mount ==>> creates full DOM in memory, does render child components
+// shallow ==>> does not create child components
 import {mount, shallow} from 'enzyme';
 import CourseForm from './CourseForm';
 
