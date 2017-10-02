@@ -1,6 +1,6 @@
 import * as types from './actyonTypes';
 import courseApi from '../api/mockCourseApi';
-import {beginAjaxCall} from './ajaxStatusActions';
+import {ajaxCallError, beginAjaxCall} from './ajaxStatusActions';
 
 function loadCoursesSuccess(courses){
   return {
@@ -36,6 +36,10 @@ export function saveCourse(course) {
       course.id ? dispatch(updateCourseSuccess(savedCourse)) :
         dispatch(createCourseSuccess(savedCourse));
     }).catch(error => {
+      // we could handle this in two ways:
+      // - we can dispatch 'SAVE_COURSE_ERROR' action
+      // - we can handle the rejected Promise at the call site, which in this case in ManageCoursePage
+      dispatch(ajaxCallError(error));
       throw(error);
     });
   };
