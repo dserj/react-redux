@@ -16,3 +16,8 @@ class Exmpl {
 - PropTypes declared separately
 - Default props declared separately
 - set initial state in constructor
+
+===== Notifications
+
+toastr package
+https://github.com/tomchentw/react-toastr
