@@ -56,7 +56,7 @@ CourseForm.propTypes = {
   loading: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
-  course: PropTypes.string.isRequired,
+  course: PropTypes.object.isRequired,
   allAuthors: PropTypes.array.isRequired
 };
 

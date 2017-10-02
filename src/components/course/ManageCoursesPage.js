@@ -60,8 +60,18 @@ ManageCoursesPage.contextTypes = {
   router: PropTypes.object
 };
 
+function getCourseById(courses, id) {
+  const course = courses.filter(course => course.id == id); // filter returns an array
+  if (course.length) return courses[0];
+  return null;
+}
+
+// ownProps ==>> is the reference to the component props
+// needed for populating props
 function mapStateToProps(state, ownProps)
 {
+  const courseId = ownProps.params.id; // from the path `/course/:id` see routes.js Route path="course/:id"
+
   let course = {
     id: "",
     title: "",
@@ -70,6 +80,11 @@ function mapStateToProps(state, ownProps)
     length: "",
     category: ""
   };
+
+  if (courseId)
+  {
+    course = getCourseById(state.courses, courseId);
+  }
 
   const authorsFormattedForDropdown = state.authors.map(a => {
     return {
