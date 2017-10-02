@@ -1,5 +1,6 @@
 // this helps to view overall picture
 export default {
   authors: [],
-  courses: []
+  courses: [],
+  numAjaxCallInProgress: 0
 };
