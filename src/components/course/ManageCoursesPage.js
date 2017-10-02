@@ -29,6 +29,9 @@ class ManageCoursesPage extends React.Component {
     e.preventDefault();
     let course = Object.assign({}, this.state.course);
     this.props.actions.saveCourse(course);
+
+    // another way to access router. We need to "Pull in the React Router" see below
+    this.context.router.push('/courses');
   }
 
   render()
@@ -49,6 +52,12 @@ ManageCoursesPage.propTypes = {
   actions: PropTypes.object.isRequired,
   course: PropTypes.object.isRequired,
   authors: PropTypes.array.isRequired
+};
+
+// Pull in the React Router context so router is available on this.context.router
+// We could set is required property
+ManageCoursesPage.contextTypes = {
+  router: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps)
