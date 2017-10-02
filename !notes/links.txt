@@ -3,4 +3,7 @@ https://github.com/coryhouse/pluralsight-redux-starter
 https://github.com/gaearon/react-hot-loader ==>> will come soon! and will became a standard
 
 bit.ly/npmvsgulp ==>> why switched from gulp to npm
-
+==== Testing
+// https://facebook.github.io/react/docs/test-utils.html ==>> old one
+https://reactjs.org/docs/test-utils.html
+https://github.com/airbnb/enzyme ==>> preferred
