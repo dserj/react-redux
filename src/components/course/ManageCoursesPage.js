@@ -11,11 +11,13 @@ class ManageCoursesPage extends React.Component {
 
     this.state = {
       course: Object.assign({}, props.course),
-      errors: {}
+      errors: {},
+      saving: false
     };
 
     this.updateCourseState = this.updateCourseState.bind(this);
     this.saveCourse = this.saveCourse.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   componentWillReceiveProps(nextProps)
@@ -35,8 +37,14 @@ class ManageCoursesPage extends React.Component {
 
   saveCourse(e) {
     e.preventDefault();
+    this.setState({ saving: true });
     let course = Object.assign({}, this.state.course);
-    this.props.actions.saveCourse(course);
+    this.props.actions.saveCourse(course)
+      .then(() => this.redirect());
+  }
+
+  redirect() {
+    this.setState({ saving: false });
 
     // another way to access router. We need to "Pull in the React Router" see below
     this.context.router.push('/courses');
@@ -51,6 +59,7 @@ class ManageCoursesPage extends React.Component {
         onSave={this.saveCourse}
         course={this.state.course}
         errors={this.state.errors}
+        saving={this.state.saving}
       />
     );
   }
