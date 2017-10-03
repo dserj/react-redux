@@ -15,7 +15,7 @@ export default function courseReducer(state = initialState.courses, action){
 
     case types.UPDATE_COURSE_SUCCESS:
       return [
-        ...state.filter(course => course.id !== action.course.is), // spread operator - iterable, so we can do filter.. filter returns a brand new array
+        ...state.filter(course => course.id !== action.course.id), // spread operator - iterable, so we can do filter.. filter returns a brand new array
         Object.assign({}, action.course)
       ];
 
