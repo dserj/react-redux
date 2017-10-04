@@ -1,0 +1,33 @@
+===== getting values from the form
+==== v.1
+
+// in ES we can not use arrow functions and have .bind(this) in constructor
+handleSubmit = (e) => {
+  e.preventDefault();
+  console.log('Event: Form Submit', this.userNameInput.value);
+}
+
+<form onSubmit={this.handleSubmit}>
+  <input type="text"
+    ref={(input) => this.userNameInput = input}
+    placeholder="Some text" required
+  />
+</form>
+
+==== v.2
+=== using state (preferred)
+
+state = {username: ''};
+
+handleSubmit = (e) => {
+  e.preventDefault();
+  console.log('Event: Form Submit', this.state.userName);
+}
+
+<form onSubmit={this.handleSubmit}>
+  <input type="text"
+    value={this.state.userName}
+    onChange={(e) => this.setState({ userName: e.target.value })}
+    placeholder="Some text" required
+  />
+</form>

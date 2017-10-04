@@ -1,0 +1,16 @@
+- set state can potentially lead to a race conditions
+
+so, if the state depends on state it is better to use following syntax:
+
+state = { counter: 0 };
+
+this.setState((prevState) => {
+  return {
+    counter: prevState.counter + 1
+  }
+});
+
+or a bit shorter version:
+
+this.setState((prevState) => ({ counter: prevState.counter + 1 }));
+

@@ -1,0 +1,3 @@
+- array of numbers
+
+const a = _.range(1, 10);
